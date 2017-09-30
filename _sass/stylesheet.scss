@@ -2,10 +2,6 @@
 
 // Define defaults for each variable.
 
-/*font-family: 'Source Sans Pro', sans-serif;
-font-family: 'Open Sans', sans-serif;
-*/
-
 $base-font-family: "Source Sans Pro", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $base-font-size:   16px !default;
 $base-font-weight: 400 !default;
@@ -81,17 +77,13 @@ ul, ol, dl, figure,
   margin-bottom: $spacing-unit / 2;
 }
 
-
-
-/**
- * Links
- */
+/* Links */
 a {
   color: $brand-color;
   text-decoration: none;
 
   &:visited {
-    color: darken($brand-color, 15%);
+    color: darken($brand-color, 20%);
   }
 
   &:hover {
@@ -107,7 +99,6 @@ a {
   margin-left: auto;
   padding-right: $spacing-unit;
   padding-left: $spacing-unit;
-  @extend %clearfix;
 
   @include media-query($on-laptop) {
     max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
@@ -116,16 +107,6 @@ a {
     padding-left: $spacing-unit / 2;
   }
 }
-
-/**
- * Clearfix
- */
-%clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
 
 /* start custom stuff */
 
@@ -274,8 +255,6 @@ h3 {
 }
 
 @include media-query($on-phone) {
-
-
 	.intro {
 		margin: $spacing-unit*2 0;
 		display: grid;
@@ -337,55 +316,3 @@ h3 {
 		}
 	}
 }
-
-
-
-
-
-/*@include media-query($on-laptop) {
-  .footer-col-1,
-  .footer-col-2 {
-    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-    width:         calc(50% - (#{$spacing-unit} / 2));
-  }
-
-  .footer-col-3 {
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-
-@include media-query($on-palm) {
-  .footer-col {
-    float: none;
-    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-    width:         calc(100% - (#{$spacing-unit} / 2));
-  }
-}
-*/
-
-
-
-
-/**
- * Images
- */
-/*img {
-  max-width: 100%;
-  vertical-align: middle;
-}
-*/
-/**
- * Lists
- */
-/*ul, ol {
-  margin-left: $spacing-unit;
-}
-
-li {
-  > ul,
-  > ol {
-    margin-bottom: 0;
-  }
-}
-*/
