@@ -1,0 +1,391 @@
+@charset "utf-8";
+
+// Define defaults for each variable.
+
+/*font-family: 'Source Sans Pro', sans-serif;
+font-family: 'Open Sans', sans-serif;
+*/
+
+$base-font-family: "Source Sans Pro", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$base-font-size:   16px !default;
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+
+$spacing-unit:     30px !default;
+
+$text-color:       #000000 !default;
+$background-color: #fdfdfd !default;
+$brand-color:      #0098ff !default;
+
+$grey-color:       #828282 !default;
+$grey-color-light: lighten($grey-color, 40%) !default;
+$grey-color-dark:  darken($grey-color, 25%) !default;
+
+// Width of the content area
+$content-width:    800px !default;
+
+$on-phone:          600px !default;
+$on-laptop:        800px !default;
+
+// Use media queries like this:
+// @include media-query($on-phone) {
+//   .wrapper {
+//     padding-right: $spacing-unit / 2;
+//     padding-left: $spacing-unit / 2;
+//   }
+// }
+
+@mixin media-query($device) {
+  @media screen and (max-width: $device) {
+    @content;
+  }
+}
+
+@mixin relative-font-size($ratio) {
+  font-size: $base-font-size * $ratio;
+}
+
+/**
+ * Reset some basic elements
+ */
+body, h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+dl, dd, ol, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Basic styling
+ */
+body {
+  font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+  color: $text-color;
+  background-color: $background-color;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-feature-settings: "kern" 1;
+     -moz-font-feature-settings: "kern" 1;
+       -o-font-feature-settings: "kern" 1;
+          font-feature-settings: "kern" 1;
+  font-kerning: normal;
+}
+
+/**
+ * Set `margin-bottom` to maintain vertical rhythm
+ */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre,
+ul, ol, dl, figure,
+%vertical-rhythm {
+  margin-bottom: $spacing-unit / 2;
+}
+
+
+
+/**
+ * Links
+ */
+a {
+  color: $brand-color;
+  text-decoration: none;
+
+  &:visited {
+    color: darken($brand-color, 15%);
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Wrapper */
+.wrapper {
+  max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+  max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: $spacing-unit;
+  padding-left: $spacing-unit;
+  @extend %clearfix;
+
+  @include media-query($on-laptop) {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+    padding-right: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+  }
+}
+
+/**
+ * Clearfix
+ */
+%clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* start custom stuff */
+
+.section-header-line {
+	border-bottom: 1px solid #333;
+	padding: 16px 25% 0 25%;
+
+	margin: 0 25% 16px 25%;
+	vertical-align: bottom;
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+h2 {
+	font-weight: 300;
+	font-size: $base-font-size * 3;
+	line-height: $base-font-size * 3;
+	text-align: center;
+	text-transform: lowercase;
+	font-variant: small-caps;
+}
+
+h3 {
+	font-weight: 300;
+	font-size: $base-font-size * 2;
+	line-height: $base-font-size * 2;
+	text-transform: lowercase;
+	font-variant: small-caps;
+}
+
+.intro {
+	margin: $spacing-unit*2 0;
+	display: grid;
+	grid-template-columns: 300px 1fr;
+	grid-gap: $spacing-unit*2 1em;
+	align-items: center;
+
+	.box {
+		text-align: center;
+		padding: 20px;
+	}
+	.intro-text {
+		font-size: $base-font-size * 2;
+		line-height: $base-font-size * 2;
+		font-weight: 400;
+	}
+}
+
+.bio {
+	margin: $spacing-unit*2 0;
+	text-align: center;
+	font-size: $base-font-size * 1.5;
+	font-weight: 300;
+
+	h1 {
+		font-weight: 300;
+		font-size: $base-font-size * 3;
+		line-height: $base-font-size * 3;
+		text-transform: lowercase;
+		font-variant: small-caps;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+
+	p {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+
+.skills {
+	.box1 {
+		grid-area: box1;
+	}
+	.box2 {
+		grid-area: box2;
+	}
+	.box3 {
+		grid-area: box3;
+	}
+	.title1 {
+		grid-area: title1;
+	}
+	.title2 {
+		grid-area: title2;
+	}
+	.title3 {
+		grid-area: title3;
+	}
+
+	display: grid;
+	margin: $spacing-unit*2;
+	grid-gap: $spacing-unit*2;
+	align-items: center;
+	grid-template-areas: 
+	"title1 box1"
+	"box2 title2"
+	"title3 box3";
+
+	.title1, .title2, .title3 {
+		font-weight: 300;
+		font-size: $base-font-size * 2;
+		line-height: $base-font-size * 2;
+		text-align: center;
+		padding: 20px;
+		background-color: $brand-color;
+		color: #fff;
+		border-radius: 15px;
+	}
+}
+
+.experience {
+	margin: $spacing-unit*2 0 $spacing-unit 0;
+	.experience-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+
+		.box {
+			padding: 20px;
+		}
+	}
+}
+
+.past-work {
+		margin: $spacing-unit*2 0 $spacing-unit 0;
+	.past-work-grid {
+		display: grid;
+		grid-template-columns: 200px 1fr;
+		.box {
+			padding: 20px;			
+		}
+		.image-box {
+			font-weight: 300;
+			font-size: $base-font-size * 2;
+			line-height: $base-font-size * 2;
+			text-align: center;
+			padding: 20px;
+		}
+	}
+}
+
+.footer {
+	text-align: center;
+	font-size: $base-font-size * .75;
+	padding-top: $spacing-unit*2;
+	padding-bottom: $spacing-unit/2;
+}
+
+@include media-query($on-phone) {
+
+
+	.intro {
+		margin: $spacing-unit*2 0;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: $spacing-unit*2 1em;
+		align-items: center;
+
+		.box {
+			text-align: center;
+			padding: 20px;
+		}
+		.intro-text {
+			font-size: $base-font-size * 2;
+			line-height: $base-font-size * 2;
+			font-weight: 400;
+		}
+	}
+
+	.skills {
+		margin: $spacing-unit 0;
+		display: grid;
+		grid-gap: 0 1em;
+		align-items: center;
+		grid-template-areas: 
+			"title1"
+			"box1"
+			"title2"
+			"box2"
+			"title3"
+			"box3";
+		.box1, .box2, .box3 {
+			padding: 0.5em 0 2em 0;
+		}
+	}
+
+	.experience {
+		margin: $spacing-unit*2 0 $spacing-unit*2 0;
+
+		.experience-grid {
+			grid-template-columns: 1fr;
+			  grid-row-gap: 0px;
+			.box {
+				ul {
+					padding: 0;
+					margin: 0;
+				}
+				padding: 0 20px;
+				margin: 0;
+			}
+		}
+	}
+
+	.past-work {
+		.past-work-grid {
+			grid-template-columns: 1fr;
+		.image-box {
+			padding: 1em 0 0 0;
+		}
+		}
+	}
+}
+
+
+
+
+
+/*@include media-query($on-laptop) {
+  .footer-col-1,
+  .footer-col-2 {
+    width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+    width:         calc(50% - (#{$spacing-unit} / 2));
+  }
+
+  .footer-col-3 {
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+
+@include media-query($on-palm) {
+  .footer-col {
+    float: none;
+    width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+    width:         calc(100% - (#{$spacing-unit} / 2));
+  }
+}
+*/
+
+
+
+
+/**
+ * Images
+ */
+/*img {
+  max-width: 100%;
+  vertical-align: middle;
+}
+*/
+/**
+ * Lists
+ */
+/*ul, ol {
+  margin-left: $spacing-unit;
+}
+
+li {
+  > ul,
+  > ol {
+    margin-bottom: 0;
+  }
+}
+*/
