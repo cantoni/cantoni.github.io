@@ -31,7 +31,7 @@ markdown: kramdown
 # - jekyll-feed
 
 # Google Analytics
-google_analytics: UA-197593-2
+google_analytics: UA-197593-7
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
