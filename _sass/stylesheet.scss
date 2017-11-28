@@ -256,7 +256,7 @@ h3 {
 
 @include media-query($on-phone) {
 	.intro {
-		margin: $spacing-unit*2 0;
+		margin: $spacing-unit*2 0 $spacing-unit*2 0;
 		display: grid;
 		grid-template-columns: 1fr;
 		grid-gap: $spacing-unit*2 1em;
@@ -274,7 +274,7 @@ h3 {
 	}
 
 	.skills {
-		margin: $spacing-unit 0;
+		margin: $spacing-unit*2 0 $spacing-unit*2 0;
 		display: grid;
 		grid-gap: 0 1em;
 		align-items: center;
@@ -285,8 +285,11 @@ h3 {
 			"box2"
 			"title3"
 			"box3";
-		.box1, .box2, .box3 {
+		.box1, .box2 {
 			padding: 0.5em 0 2em 0;
+		}
+		.box3 {
+			padding: 0.5em 0 0.5em 0;
 		}
 	}
 
