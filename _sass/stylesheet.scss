@@ -3,7 +3,7 @@
 // Define defaults for each variable.
 
 $base-font-family: "Source Sans Pro", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$base-font-size:   16px !default;
+$base-font-size:   18px !default;
 $base-font-weight: 400 !default;
 $small-font-size:  $base-font-size * 0.875 !default;
 $base-line-height: 1.5 !default;
@@ -207,8 +207,8 @@ h3 {
 
 	.title1, .title2, .title3 {
 		font-weight: 300;
-		font-size: $base-font-size * 2;
-		line-height: $base-font-size * 2;
+		font-size: $base-font-size * 1.5;
+		line-height: $base-font-size * 1.5;
 		text-align: center;
 		padding: 20px;
 		background-color: $brand-color;
@@ -267,8 +267,8 @@ h3 {
 			padding: 20px;
 		}
 		.intro-text {
-			font-size: $base-font-size * 2;
-			line-height: $base-font-size * 2;
+			font-size: $base-font-size * 1.5;
+			line-height: $base-font-size * 1.5;
 			font-weight: 400;
 		}
 	}
